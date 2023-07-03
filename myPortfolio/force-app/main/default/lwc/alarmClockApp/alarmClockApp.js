@@ -3,7 +3,13 @@ import AlarmClockAssets from '@salesforce/resourceUrl/AlarmClockAssets'
 export default class AlarmClockApp extends LightningElement {
   clockImage = AlarmClockAssets+'/AlarmClockAssets/clock.png'
   currentTime = ''
+  hours = []
+  minutes = []
+  meridiems = ['AM', 'PM']
+
   connectedCallback(){
+    this.createHoursOptions()
+    this.createMinutesOptions()
     this.currentTimeHandler()
   }
   currentTimeHandler(){
@@ -26,5 +32,19 @@ export default class AlarmClockApp extends LightningElement {
       this.currentTime = `${hour}:${min}:${sec} ${ampm}`
 
     }, 1000)
+  }
+
+  createHoursOptions() {
+    for(let i=0; i<=12; i++){
+      let val = i<10 ? "0" + i : i
+      this.hours.push(val)
+    }
+  }
+
+  createMinutesOptions() {
+    for(let i=0; i<=59; i++){
+      let val = i<10 ? "0" + i : i
+      this.minutes.push(val)
+    }
   }
 }
