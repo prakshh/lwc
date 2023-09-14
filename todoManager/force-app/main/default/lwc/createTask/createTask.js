@@ -26,4 +26,14 @@ export default class CreateTask extends LightningElement {
             this.dueDate != '' && this.targetParent != true ? (this.showSave = true) : (this.showSave = false);
         }
     }
+    
+    handleClick() {
+        console.log('###Buttons click on child component');
+    }
+
+    @api
+    handleParentClick() {
+        this.handleClick();
+    }
+
 }
