@@ -1,10 +1,15 @@
-import { LightningElement } from 'lwc';
+import { LightningElement, api } from 'lwc';
 
 export default class CreateTask extends LightningElement {
+    @api targetParent;
     taskTitle;
     dueDate;
     showDueDate = false;
     showSave = false;
+
+    connectedCallback() {
+        console.log('####Target Parent = ' + this.targetParent);
+    }
 
     handleOnChange(event) {
         const fieldName = event.target.name;
@@ -18,7 +23,7 @@ export default class CreateTask extends LightningElement {
         }
         else if(fieldName === 'dueDate') {
             this.dueDate = event.target.value;
-            this.dueDate != '' ? (this.showSave = true) : (this.showSave = false);
+            this.dueDate != '' && this.targetParent != true ? (this.showSave = true) : (this.showSave = false);
         }
     }
 }
