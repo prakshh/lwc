@@ -6,4 +6,9 @@ export default class HelloWorld extends LightningElement {
         'dog': 'woof',
         'horse': 'neigh'
     }
+    title = 'LWC'
+
+    changeHandler(event) {
+        this.title = event.target.value
+    }
 }
