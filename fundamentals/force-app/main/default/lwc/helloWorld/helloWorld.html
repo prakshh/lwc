@@ -2,16 +2,16 @@
 
 <template>
 
-    <lightning-card  title="Two Way Data Binding">
-        <div>Hello World</div>
-        <div>{animalSounds.dog}</div>
+    <lightning-card title="Two Way Data Binding">
+        <div class="slds-m-around_medium">
+            <div>Hello World</div>
+            <div>{animalSounds.dog}</div>
 
-        <lightning-input type="text"
-            label="Enter Course Name"
-            onkeyup={changeHandler}>
-        </lightning-input>
+            <lightning-input type="text" label="Enter Course Name" onkeyup={changeHandler}>
+            </lightning-input>
 
-        <div>{fullName} is a course of {title}</div>
+            <div>{fullName} is a course of {title}</div>
+        </div>
     </lightning-card>
 
 </template>
