@@ -1,7 +1,17 @@
-<template>
-    <div>Hello World</div>
-    <div>{animalSounds.dog}</div>
+<!-- sldsValidatorIgnore -->
 
-    <input type="text" onkeyup={changeHandler}/>
-    <div>{fullName} is a course of {title}</div>
+<template>
+
+    <lightning-card  title="Two Way Data Binding">
+        <div>Hello World</div>
+        <div>{animalSounds.dog}</div>
+
+        <lightning-input type="text"
+            label="Enter Course Name"
+            onkeyup={changeHandler}>
+        </lightning-input>
+
+        <div>{fullName} is a course of {title}</div>
+    </lightning-card>
+
 </template>
