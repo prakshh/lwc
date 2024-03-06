@@ -22,5 +22,12 @@ export default class HelloWorld extends LightningElement {
     trackHandler(event) {
         this.address.city = event.target.value
     }
+    /* Here, we are mutating the data. This is a bad practice
+    As, in JavaScript, we should not mutate the data. You should always generate a new copy.
+    That means, we should create a new object and pass that to the component.
+    */ 
+    addressHandlerWithoutTrack(event) {
+        this.address = {...this.address, "city": event.target.value}
+    }
 
 }
