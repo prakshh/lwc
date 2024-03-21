@@ -9,13 +9,20 @@
                 title="Show data title"
                 onclick={handleClick}
                 class="slds-m-left_x-small"></lightning-button>
-
             <template if:true={isVisible}>
                 <div>Welcome to Zero to Hero series</div>
             </template>
-
             <template if:false={isVisible}>
                 <div>You can't see the data. Please click the button.</div>
+            </template>
+
+            <lightning-input
+                type="text"
+                label="Type hello to see the data"
+                onkeyup={changeHandler}
+            ></lightning-input>
+            <template if:true={helloMethod}>
+                <div>Hurray!! You have typed corectly</div>
             </template>
 
         </div>
