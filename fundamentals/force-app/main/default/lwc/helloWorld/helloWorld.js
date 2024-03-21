@@ -30,4 +30,27 @@ export default class HelloWorld extends LightningElement {
         this.address = {...this.address, "city": event.target.value}
     }
 
+    // getter example
+    
+    users = ["tony", "wanda", "natasha"]
+    num1 = 10
+    num2 = 20
+
+    /*firstUser = this.users[0]
+
+        - this would set firstUser to the value of this.users[0] at the moment of assignment, but it wouldn't dynamically reflect changes to users array. If you later update the users array, firstUser wouldn't automatically update.
+
+        - this is where a getter method becomes useful. By using a getter method, you ensure that firstUser always reflects the current first user in the users array, even if the array changes after the component is initialized. It provides a dynamic way to retrieve the value, ensuring consistency and real-time updates.
+     */
+
+    get firstUser() {
+         return this.users[0]
+    }
+
+    get multiply() {
+        return this.num1 * this.num2
+    }
+
+
+
 }
