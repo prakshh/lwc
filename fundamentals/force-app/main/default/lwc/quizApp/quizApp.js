@@ -2,7 +2,9 @@ import { LightningElement } from 'lwc';
 
 export default class QuizApp extends LightningElement {
     selected = {}   //for storing answers
-    correctAnswers = 0  //number of cotrect answers
+    correctAnswers = 0  //number of correct answers
+    isSubmitted = false     //show number of correct answers only if form is submitted
+    myQuestions = []
     myQuestions = [
         {
             id: "Question1",
@@ -41,6 +43,9 @@ export default class QuizApp extends LightningElement {
         //it is saying: if selected length != myQuestions length, then return true else return false
         //it will keep the submit button disabled if all answers are not selected 
     }
+    get isScoredFull() {
+        return `slds-text-heading_large ${this.myQuestions.length === this.correctAnswers?'slds-text-color_success':'slds-text-color_error'}`
+    }
 
     changeHandler(event) {
         console.log("name", event.target.name)
@@ -62,6 +67,7 @@ export default class QuizApp extends LightningElement {
           it will return [{"id":"Question1","correctAnswer":"a"}]
         */
         this.correctAnswers = correct.length        //since filter (which is in 'correct') always returns array, we can use it to get the length of array, and hence, number of correct answers
+        this.isSubmitted = true
         console.log("this.correctAnswers", this.correctAnswers)
     }
 
