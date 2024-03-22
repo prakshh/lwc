@@ -43,6 +43,7 @@ export default class QuizApp extends LightningElement {
         //it is saying: if selected length != myQuestions length, then return true else return false
         //it will keep the submit button disabled if all answers are not selected 
     }
+    //for applying dynamic styling to our result
     get isScoredFull() {
         return `slds-text-heading_large ${this.myQuestions.length === this.correctAnswers?'slds-text-color_success':'slds-text-color_error'}`
     }
@@ -74,6 +75,7 @@ export default class QuizApp extends LightningElement {
     resetHandler() {
         this.selected = {}
         this.correctAnswers = 0
+        this.isSubmitted = false
     }
 }
 
