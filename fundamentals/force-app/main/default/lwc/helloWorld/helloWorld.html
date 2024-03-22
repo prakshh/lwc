@@ -1,9 +1,7 @@
-<!-- sldsValidatorIgnore -->
-
 <template>
 
     <lightning-card title="Two Way Data Binding">
-        <div class="slds-m-around_medium">
+        <div class="slds-var-m-around_medium">
             <div>Hello World</div>
             <div>{animalSounds.dog}</div>
 
@@ -15,14 +13,14 @@
     </lightning-card>
 
     <lightning-card title="@track properties">
-        <div class="slds-m-around-medium">
+        <div class="slds-var-m-around_medium">
             <lightning-input type="text" label="Enter City Name" onkeyup={addressHandlerWithoutTrack}></lightning-input>
             {address.city} is my city
         </div>
     </lightning-card>
 
     <lightning-card title="getter properties">
-        <div class="slds-m-around-medium">
+        <div class="slds-var-m-around_medium">
             <!-- <div>{users[0]}</div>       // Invalid expression: Template expression doesn't allow computed oroperty access -->
             <!-- <div>{num1 * num2}</div>    // Invalid expression: Template expression doesn't allow BinaryExpression  -->
             <div>First username is: {firstUser}</div>
