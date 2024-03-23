@@ -1,4 +1,4 @@
-import { createElement } from 'lwc';
+import { createElement } from 'lwc/';
 import HelloParentComponent from 'c/helloParentComponent';
 
 describe('c-hello-parent-component', () => {

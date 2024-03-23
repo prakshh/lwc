@@ -1,4 +1,4 @@
-import { createElement } from 'lwc';
+import { createElement } from 'lwc/';
 import HelloConditonalRendering from 'c/helloConditonalRendering';
 
 describe('c-hello-conditonal-rendering', () => {
