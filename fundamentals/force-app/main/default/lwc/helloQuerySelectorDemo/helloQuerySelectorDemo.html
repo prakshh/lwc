@@ -2,7 +2,10 @@
     <lightning-card title="Query Selector">
         <div class="slds-var-m-around_medium">
             <h1>Hey, I'm a header</h1>
-            <button onclick={fetchDetailHandler}>Fecth Detail</button>
+            <template for:each={userNames} for:item="user">
+                <div class="name" key={user}>{user}</div>
+            </template>
+            <button onclick={fetchDetailHandler}>Fetch Detail</button>
         </div>
     </lightning-card>
 </template>
