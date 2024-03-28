@@ -6,7 +6,10 @@
                 <div class="name" key={user} title={user}>{user}</div>
             </template>
             <div class="child" lwc:dom="manual"></div>
-            <button onclick={fetchDetailHandler}>Fetch Detail</button>
+
+            <!-- <button onclick={fetchDetailHandler}>Fetch Detail</button>  -->
+            <!-- fixing: Clickable images, Lightning button icons, and form elements require labels for mobile users. -->
+            <label><button onclick={fetchDetailHandler}>Fetch Detail</button></label>
         </div>
     </lightning-card>
 </template>
