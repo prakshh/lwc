@@ -1,0 +1,17 @@
+/* id - not recommended to use in LWC */
+
+/* element, class, pseudo class (hover property) - recommended */
+
+p {
+    color:green;
+    font-size: 30px;
+    border: 1px solid red;
+}
+.user {
+    color: pink;
+    font-size: 20px;
+}
+.user:hover {
+    color:red;
+    font-size: 50px;
+}
