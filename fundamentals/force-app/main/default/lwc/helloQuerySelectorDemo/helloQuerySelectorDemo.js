@@ -12,6 +12,23 @@ export default class HelloQuerySelectorDemo extends LightningElement {
             console.log(item.innerText)
             item.setAttribute("title", item.innerText)      //setting attribute (adding title tag) dynamically using querySelector
         })
+
+        // lwc:dom = "manual" demo
+        // Add this directive to a native HTML element to attach an HTML element as a child
+        const childElem = this.template.querySelector('.child')
+        childElem.innerHTML = `<p>Hey I am a child element</p>`
+
+        /* the same thing without using 'innerHTML'
+            // Find the child element
+            const childElem = this.template.querySelector('.child');
+
+            // Create a paragraph element
+            const paragraph = document.createElement('p');
+            paragraph.textContent = 'Hey I am a child element';
+
+            // Append the paragraph element to the child element
+            childElem.appendChild(paragraph);
+        */
     }
 }
 
