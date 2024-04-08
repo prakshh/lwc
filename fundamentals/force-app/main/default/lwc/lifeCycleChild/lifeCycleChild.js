@@ -11,4 +11,18 @@ export default class LifeCycleChild extends LightningElement {
     renderedCallback() {    // this hook gets invoked when rendering is completed
         console.log("child renderedCallback called")
     }
+    disconnectedCallback() {    // this hook gets invoked when rendering is completed
+        console.log("child disconnectedCallback called")
+    }
 }
+
+/*
+when clicked 'Show child'
+    child constructor called
+    child connectedCallback called
+    child renderedCallback called
+    parent renderedCallback called
+when clicked 'Remove child'
+    child disconnectedCallback called
+    parent renderedCallback called
+*/
