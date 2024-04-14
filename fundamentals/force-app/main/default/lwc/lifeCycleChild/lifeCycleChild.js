@@ -7,6 +7,7 @@ export default class LifeCycleChild extends LightningElement {
     }
     connectedCallback() {   //  this hook is used to fetch the data from the server
         console.log("child connectedCallback called")
+        throw new Error('Loading of child component failed')
     }
     renderedCallback() {    // this hook gets invoked when rendering is completed
         console.log("child renderedCallback called")

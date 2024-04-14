@@ -21,6 +21,10 @@ export default class LifeCycleParent extends LightningElement {
         // this.isChildVisible = true
         this.isChildVisible = !this.isChildVisible              // making it toggle
     }
+    errorCallback(error, stack) {
+        console.log(error.message)
+        console.log(stack)
+    }
 }
 
 /*
