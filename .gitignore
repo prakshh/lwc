@@ -208,3 +208,4 @@ local.properties
 flows/
 target/
 **/*.mflow
+.vscode
