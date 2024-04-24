@@ -1,6 +1,13 @@
 import { LightningElement } from 'lwc';
 
-export default class CreateTaskAction extends LightningElement {}
+export default class CreateTaskAction extends LightningElement {
+    closeAction() {
+
+    }
+    handleClick() {
+        
+    }
+}
 
 /*
 WE can use LWC to create a Target -> custom action (Quick Action).
