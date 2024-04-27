@@ -1,11 +1,15 @@
-import { LightningElement } from 'lwc';
+import { LightningElement, api } from 'lwc';
 
 export default class CreateTask extends LightningElement {
+    @api targetParent;
     taskTitle;
     dueDate;
     showDueDate = false;
     showSave = false;
 
+    connectedCallback(){
+        console.log("### Target Parent: " + this.targetParent);
+    }
     handleOnChange(event) {
         //this.taskTitle = event.target.value;
         const fieldName = event.target.name;
