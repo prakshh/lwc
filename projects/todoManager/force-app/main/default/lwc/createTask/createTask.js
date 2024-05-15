@@ -1,4 +1,5 @@
 import { LightningElement, api } from 'lwc';
+import saveToDo from '@salesforce/apex/ToDoController.saveToDo';
 
 export default class CreateTask extends LightningElement {
     @api targetParent;
@@ -33,6 +34,17 @@ export default class CreateTask extends LightningElement {
 
     handleClick() {
         console.log("#### Buttons click on Child");
+        saveToDo({ title: this.taskTitle, dueDate: this.dueDate }).then(
+            (result) => {
+                if(result === "Success") {
+                    this.taskTitle = "";
+                    this.dueDate = "";
+                }
+            }
+        )
+        .catch((error)=>{
+            console.log("error: ", error);
+        })
     }
     @api
     handleParentClick() {
