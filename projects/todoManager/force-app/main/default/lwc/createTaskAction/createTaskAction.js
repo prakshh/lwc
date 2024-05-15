@@ -1,7 +1,19 @@
 import { LightningElement } from 'lwc';
+import { CloseActionScreenEvent } from 'lightning/actions';
 
 export default class CreateTaskAction extends LightningElement {
     isAction = true;
+
+    handleClick() {
+        this.refs.createToDo.handleParentClick();
+        // const childComponent = this.template.querySelector('c-create-task');
+        // if(childComponent) {
+        //     childComponent.handleParentClick();
+        // }
+    }
+    closeAction() {
+        this.dispatchEvent(new CloseActionScreenEvent());
+    }
 
 }
 
