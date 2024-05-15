@@ -1,4 +1,5 @@
 import { LightningElement, api } from 'lwc';
+import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import saveToDo from '@salesforce/apex/ToDoController.saveToDo';
 
 export default class CreateTask extends LightningElement {
@@ -39,11 +40,25 @@ export default class CreateTask extends LightningElement {
                 if(result === "Success") {
                     this.taskTitle = "";
                     this.dueDate = "";
+
+                    const evt = new ShowToastEvent({
+                        title: "Success",
+                        message: "A new item has been added in your todo list",
+                        variant: "sucesss"
+                    });
+                    this.dispatchEvent(evt);
                 }
             }
         )
         .catch((error)=>{
             console.log("error: ", error);
+
+            const evt = new ShowToastEvent({
+                title: "Error",
+                message: error.body.message,
+                variant: "error"
+            });
+            this.dispatchEvent(evt);
         })
     }
     @api
@@ -68,4 +83,10 @@ To make the server side callouts, 2 things we can use:
 Custom object - ToDo
 - A ToDo custom object and 3 custom field are created - Title, Due Date, Status
 
+Toast message
+- tis shows a pop-up message on top after entering all data
+- need to import ShowToastEvent
+
+Created a tab of ToDo object
+- this will display list of ToDo objects created
 */
