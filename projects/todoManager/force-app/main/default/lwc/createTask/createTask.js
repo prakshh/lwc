@@ -30,4 +30,12 @@ export default class CreateTask extends LightningElement {
                 : (this.showSave = false);
         }
     }
+
+    handleClick() {
+        console.log("#### Buttons click on Child");
+    }
+    @api
+    handleParentClick() {
+        this.handleClick();
+    }
 }
