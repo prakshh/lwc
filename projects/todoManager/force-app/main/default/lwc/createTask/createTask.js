@@ -24,7 +24,10 @@ export default class CreateTask extends LightningElement {
         } else if(fieldName === 'dueDate') {
             this.dueDate = event.target.value;
             console.log(" ~ this.dueDate: ", this.dueDate);
-            this.dueDate != '' ? (this.showSave = true) : (this.showSave = false);
+            // this.dueDate != '' ? (this.showSave = true) : (this.showSave = false);
+            this.dueDate != "" && this.targetParemt != true 
+                ? (this.showSave = true) 
+                : (this.showSave = false);
         }
     }
 }
