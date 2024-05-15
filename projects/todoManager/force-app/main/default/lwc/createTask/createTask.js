@@ -39,3 +39,21 @@ export default class CreateTask extends LightningElement {
         this.handleClick();
     }
 }
+
+
+
+/*
+Wire Apex to Save records
+- To save record, we need to wire apex.
+- First, we need to save the record using save Task button
+- Then, we need to get the list of records and display it as a list. 
+
+To make the server side callouts, 2 things we can use:
+- First, wire an Apex method where we can wire the records on the Load of the page
+- Second, imperative method - whenever we need to perform any action on button click, we will use imperative Apex 
+
+
+Custom object - ToDo
+- A ToDo custom object and 3 custom field are created - Title, Due Date, Status
+
+*/
