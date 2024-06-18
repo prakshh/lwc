@@ -1,0 +1,58 @@
+public class Spoonacular {
+    
+    public static final String SPOONACULAR_API = 'https://api.spoonacular.com';
+    public static final String API_KEY = 'c2e73f3e1ef5474ca79a503a85fed91e';
+    
+    // public static void getRandomRecipe() {
+    public static String getRandomRecipe() {
+        
+        Http http = new Http();
+        HttpRequest request = new HttpRequest();
+        request.setEndpoint(SPOONACULAR_API+'/recipes/random?apiKey='+API_KEY);
+        request.setMethod('GET');
+        
+        HttpResponse response = http.send(request);
+        // If the request is successful, parse the JSON response.
+        // System.debug('response code ' + response.getStatusCode());
+        if(response.getStatusCode() == 200) {
+            System.debug('response ' + response.getBody());
+            return response.getBody();
+        }
+        return '';
+    }
+    
+    public static String getRecipe(String recipeId) {
+        
+        Http http = new Http();
+        HttpRequest request = new HttpRequest();
+        request.setEndpoint(SPOONACULAR_API+'/recipes/'+recipeId+'/information?apiKey='+API_KEY);
+        request.setMethod('GET');
+        
+        HttpResponse response = http.send(request);
+        // If the request is successful, parse the JSON response.
+        System.debug('response code ' + response.getStatusCode());
+        if(response.getStatusCode() == 200) {
+            System.debug('response ' + response.getBody());
+            return response.getBody();
+        }
+        return '';
+    }
+    
+    public static String getRecipeByIngredient(String ingredients) {
+        
+        Http http = new Http();
+        HttpRequest request = new HttpRequest();
+        request.setEndpoint(SPOONACULAR_API+'/recipes/findByIngredients?apiKey='+API_KEY+'&ingredients='+ingredients);
+        request.setMethod('GET');
+        
+        HttpResponse response = http.send(request);
+        // If the request is successful, parse the JSON response.
+        System.debug('response code ' + response.getStatusCode());
+        if(response.getStatusCode() == 200) {
+            System.debug('response ' + response.getBody());
+            return response.getBody();
+        }
+        return '';
+    }
+    
+}
